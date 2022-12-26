@@ -1,0 +1,27 @@
+.Pane_background {
+    -fx-background-color: #2e3847;
+}
+.Pane_content {
+    -fx-background-color: linear-gradient(to bottom right, #043066, #59bdc2);
+}
+.Pane_title {
+    -fx-background-color: #59bdc2;
+}
+.JFXButton {
+    -fx-background-color: #59bdc2;
+    -fx-text-fill: WHITE;
+}
+.Label {
+    -fx-text-fill: WHITE;
+}
+.FontIcon {
+    -fx-fill: BLACK;
+}
+.textField {
+    -fx-font-weight: bold;
+    -fx-font-size: 14.0;
+    -fx-text-fill: WHITE;
+    -fx-background-color: #2e3847;
+    -fx-border-color: BLACK;
+    -fx-border-width: 0px 0px 2px 0px;
+}

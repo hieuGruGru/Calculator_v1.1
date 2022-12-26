@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1000.0" styleClass="Pane_content" stylesheets="@lightMode.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+   <children>
+      <Pane prefHeight="550.0" prefWidth="350.0">
+         <children>
+            <VBox layoutX="14.0" layoutY="200.0" prefHeight="350.0" prefWidth="100.0">
+               <children>
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="Button" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="Button" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="7" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="4" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="1" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="0" />
+               </children>
+            </VBox>
+            <VBox layoutX="125.0" layoutY="200.0" prefHeight="350.0" prefWidth="100.0">
+               <children>
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="Button" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="Button" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="8" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="5" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="2" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="." />
+               </children>
+            </VBox>
+            <VBox layoutX="236.0" layoutY="200.0" prefHeight="350.0" prefWidth="100.0">
+               <children>
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="Button" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="Button" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="Button" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="9" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="6" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="3" />
+                  <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="JFXButton" text="pi" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <TextField layoutX="5.0" layoutY="20.0" prefHeight="56.0" prefWidth="340.0" styleClass="textField" text="dsdsdsfdsfd" />
+      <TextField layoutX="5.0" layoutY="85.0" prefHeight="39.0" prefWidth="340.0" styleClass="textField" />
+      <Pane fx:id="titlePane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="20.0" prefWidth="1000.0">
+         <children>
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="980.0" layoutY="17.0" onMouseClicked="#close" size="25" />
+            <FontAwesomeIconView glyphName="MINUS" layoutX="953.0" layoutY="19.0" onMouseClicked="#minimize" size="25" />
+         </children>
+      </Pane>
+      <Canvas fx:id="TheCanvas" height="500.0" layoutX="400.0" layoutY="20.0" width="600.0" />
+      <Canvas fx:id="canvasGo" height="500.0" layoutX="400.0" layoutY="20.0" onMouseDragged="#onMouseDraggedListener" onMouseExited="#onMouseExitedListener" onMousePressed="#onMousePressedListener" onMouseReleased="#onMouseReleaseListener" width="600.0" />
+      <VBox layoutX="351.0" layoutY="20.0" prefHeight="250.0" prefWidth="50.0">
+         <children>
+            <JFXButton fx:id="rectButton" onAction="#setRectangleAsCurrentShape" prefHeight="40.0" prefWidth="50.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/rectangle.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="ovlButton" onAction="#setOvalAsCurrentShape" prefHeight="40.0" prefWidth="50.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/oval.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="lineButton" onAction="#setLineAsCurrentShape" prefHeight="40.0" prefWidth="50.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/line.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="pencButton" onAction="#setFreeDesign" prefHeight="40.0" prefWidth="50.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/freedraw.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="eraseButton" onAction="#setFreeErase" prefHeight="40.0" prefWidth="50.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/freeerase.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton onAction="#clearCanvas" prefHeight="40.0" prefWidth="50.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/erase.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Slider fx:id="sizeSlider" layoutX="463.0" layoutY="528.0" prefHeight="14.0" prefWidth="200.0" />
+      <ColorPicker fx:id="colorPick" layoutX="351.0" layoutY="523.0" prefHeight="25.0" prefWidth="78.0">
+         <value>
+            <Color red="0.0" green="0.0" blue="0.0" />
+         </value>
+      </ColorPicker>
+      <RadioButton fx:id="strokeRB" layoutX="357.0" layoutY="297.0" mnemonicParsing="false" selected="true" text="Stroke">
+      </RadioButton>
+      <RadioButton fx:id="fillRB" layoutX="358.0" layoutY="270.0" mnemonicParsing="false" text="Fill">
+      </RadioButton>
+      <Label fx:id="sizeLabel" layoutX="434.0" layoutY="526.0" prefHeight="18.0" prefWidth="18.0" />
+      <Label fx:id="sizeLabel1" layoutX="448.0" layoutY="526.0" prefHeight="18.0" prefWidth="18.0" text="px" />
+   </children>
+</AnchorPane>
